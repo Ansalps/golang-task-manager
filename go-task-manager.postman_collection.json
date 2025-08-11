@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "cd519741-d5d8-4804-8ad9-37ef8d5cbf23",
+		"name": "go-task-manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36342630",
+		"_collection_link": "https://grey-desert-467763.postman.co/workspace/My-Workspace~bcea8f84-f843-4381-8975-fb6a17378208/collection/36342630-cd519741-d5d8-4804-8ad9-37ef8d5cbf23?action=share&source=collection_link&creator=36342630"
+	},
+	"item": [
+		{
+			"name": "Register New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Ansal\",\r\n    \"last_name\": \"PS\",\r\n    \"email\": \"ansalps10@gmail.com\",\r\n    \"password\": \"Aa1@asdfg\",\r\n    \"phone\":\"1234567890\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ansalps10@gmail.com\",\r\n    \"password\": \"Aa1@asdfg\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"machine task\",\r\n    \"description\": \"machine task for golang developer position to do in clean architecture\",\r\n    \"status\":\"invalid data\",\r\n    \"due_at\":\"invalid data\",\r\n    \"is_public\":\"invalid data,\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{usertoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ansalps10@gmail.com\",\r\n    \"password\": \"Aa1@asdfg\"\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/tasks/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"machine task\",\r\n    \"description\": \"machine task for golang developer position to do in clean architecture\",\r\n    \"status\":\"invalid data\",\r\n    \"due_at\":\"invalid data\",\r\n    \"is_public\":\"invalid data,\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/tasks/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Ansal\",\r\n    \"last_name\": \"PS\",\r\n    \"email\": \"ansalps10@gmail.com\",\r\n    \"password\": \"Aa1@asdfg\",\r\n    \"phone\":\"1234567890\"\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/tasks/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List user's tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ansalps10@gmail.com\",\r\n    \"password\": \"Aa1@asdfg\"\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View shared publice task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ansalps10@gmail.com\",\r\n    \"password\": \"Aa1@asdfg\"\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "localhost:8080/public/view-public-task",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"public",
+						"view-public-task"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
